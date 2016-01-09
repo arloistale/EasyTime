@@ -1,0 +1,254 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingPrefix"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="24dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/headerFrame"
+            android:layout_weight=".75">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/headerContainer"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="November 12th"
+                    android:id="@+id/dateText"
+                    android:textSize="18sp"
+                    android:textColor="#424242" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/timeText"
+                    android:textSize="22sp"
+                    tools:text="9:30 AM"
+                    android:layout_below="@+id/dateText"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="#212121" />
+
+            </RelativeLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2.5"
+            android:id="@+id/buttonFrame">
+
+            <RelativeLayout
+                android:layout_width="192dp"
+                android:layout_height="192dp"
+                android:id="@+id/buttonContainer"
+                android:layout_gravity="center">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/checkInButton"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/button_check_in"
+                    android:text="@string/label_game_check_in"
+                    android:textColor="@drawable/button_text_color"
+                    android:textSize="32sp"
+                    fontPath="fonts/Roboto-Light.ttf" />
+
+                <Button
+                    fontPath="fonts/Roboto-Light.ttf"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/checkOutButton"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/button_check_out"
+                    android:text="@string/label_game_check_out"
+                    android:textColor="@drawable/button_text_color"
+                    android:textSize="32sp"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.25"
+            android:id="@+id/durationFrame">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/durationContainer"
+                android:layout_gravity="center">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/timeContainer"
+                    android:layout_centerHorizontal="true">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/timeHoursContainer">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:id="@+id/timerHoursText"
+                            android:textSize="72sp"
+                            android:layout_centerVertical="true"
+                            android:singleLine="true"
+                            android:textColor="#757575"
+                            fontPath="fonts/Roboto-Light.ttf" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="h"
+                            android:id="@+id/timerHoursLabelText"
+                            android:textSize="48sp"
+                            android:singleLine="true"
+                            android:layout_toRightOf="@+id/timerHoursText"
+                            android:layout_toEndOf="@+id/timerHoursText"
+                            android:textColor="#757575"
+                            fontPath="fonts/Roboto-Light.ttf"
+                            android:layout_alignBaseline="@+id/timerHoursText"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginStart="2dp"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/timeMinutesContainer"
+                        android:layout_toRightOf="@+id/timeHoursContainer"
+                        android:layout_toEndOf="@+id/timeHoursContainer"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="00"
+                            android:id="@+id/timerMinutesText"
+                            android:textSize="72sp"
+                            android:layout_centerVertical="true"
+                            android:singleLine="true"
+                            android:textColor="#757575"
+                            fontPath="fonts/Roboto-Light.ttf" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="m"
+                            android:id="@+id/timerMinutesLabelText"
+                            android:textSize="48sp"
+                            android:singleLine="true"
+                            android:textColor="#757575"
+                            fontPath="fonts/Roboto-Light.ttf"
+                            android:layout_toRightOf="@+id/timerMinutesText"
+                            android:layout_toEndOf="@+id/timerMinutesText"
+                            android:layout_alignBaseline="@+id/timerMinutesText"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginStart="2dp"/>
+
+                    </RelativeLayout>
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/feedFrame"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:id="@+id/feedContainer"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/rectangle_rounded"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_gravity="center">
+
+                <ViewAnimator
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/feedAnimator" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/feed_default"
+                        android:id="@+id/feedText1"
+                        android:textSize="14sp"
+                        android:textColor="#424242" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/feed_default"
+                        android:id="@+id/feedText2"
+                        android:textSize="14sp"
+                        android:textColor="#424242" />
+                </ViewAnimator>
+            </RelativeLayout>
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/errorContainer"
+        android:background="#fff"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/errorText"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:textColor="@color/secondary" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/progressContainer"
+        android:background="#fff"
+        android:visibility="gone">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chartProgress"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+</RelativeLayout>

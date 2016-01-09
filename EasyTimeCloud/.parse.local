@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "EasyTime": {
+      "applicationId": "0zOguLdTdU3vgFMmtaJQNLyk1kUm18NowKwp3ECN"
+    },
+    "_default": {
+      "link": "EasyTime"
+    }
+  }
+}

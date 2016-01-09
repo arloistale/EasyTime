@@ -1,0 +1,164 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingPrefix"
+    android:id="@+id/editStampContainer"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:id="@+id/headerContainer"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_edit_stamp"
+            android:id="@+id/editStampTitleText"
+            android:textColor="#212121"
+            android:textSize="22sp"
+            android:layout_centerVertical="true" />
+
+        <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:id="@+id/deleteButton"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_delete"
+            android:contentDescription="@string/content_missing_description"
+            android:tint="#212121"
+            android:background="@drawable/button_generic" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mainContainer"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/headerContainer"
+        android:layout_marginRight="24dp"
+        android:layout_marginLeft="24dp">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/flagContainer"
+            android:layout_centerVertical="true">
+
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="IN"
+                android:id="@+id/flagButtonIn"
+                android:background="@drawable/button_check_in"
+                fontPath="fonts/Roboto-Light.ttf"
+                android:textColor="#fff" />
+
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="OUT"
+                android:id="@+id/flagButtonOut"
+                android:background="@drawable/button_check_out"
+                fontPath="fonts/Roboto-Light.ttf"
+                android:textColor="#fff"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/dateContainer"
+            android:layout_toRightOf="@+id/flagContainer"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp">
+
+            <EditText
+                android:id="@+id/dateEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="datetime|date"
+                android:layout_weight="1"
+                tools:text="Sep 16"
+                android:textColor="#424242"
+                android:textSize="14sp"
+                android:focusable="false" android:focusableInTouchMode="false"/>
+
+            <EditText
+                android:id="@+id/timeEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="#424242"
+                android:textSize="14sp"
+                tools:text="9:30 AM"
+                android:inputType="datetime|time"
+                android:focusableInTouchMode="false" android:focusable="false"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/commentContainer"
+        android:layout_below="@+id/mainContainer"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp">
+
+        <EditText
+            android:id="@+id/commentEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text|textCapSentences"
+            android:imeOptions="actionDone"
+            android:hint="@string/hint_stamp_comment" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:id="@+id/buttonContainer"
+        android:layout_marginBottom="8dp"
+        android:layout_below="@+id/commentContainer"
+        android:layout_marginTop="24dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/label_action_dismiss"
+            android:textColor="@color/accent"
+            android:id="@+id/cancelButton"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_toLeftOf="@+id/submitButton"
+            android:layout_toStartOf="@+id/submitButton"
+            android:layout_marginRight="8dp"
+            android:layout_marginEnd="8dp"
+            android:textSize="14sp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/label_action_save"
+            android:textColor="@color/accent"
+            android:id="@+id/submitButton"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_alignParentBottom="false"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="8dp"
+            android:layout_marginEnd="8dp"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+</RelativeLayout>
